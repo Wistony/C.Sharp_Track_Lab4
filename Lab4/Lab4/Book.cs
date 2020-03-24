@@ -26,9 +26,9 @@ namespace Lab4
 
         public override string ToString()
         {
-            return "(title=" + this.Title + "; author={" + Author.ToString() + "};" +
-                   " publishingHouse=" + this.PublishingHouse + "; yearOfPublishing=" +
-                   + this.YearOfPublishing + "; value=" + this.Value;
+            return "(title=\"" + this.Title + "\"; author={" + Author.ToString() + "};" +
+                   " publishingHouse=\"" + this.PublishingHouse + "\"; yearOfPublishing=\"" +
+                   +this.YearOfPublishing + "\"; value=\"" + this.Value + "\";";
         }
     }
 
@@ -52,8 +52,8 @@ namespace Lab4
 
         public override string ToString()
         {
-            return "fullname=\""  + this.Fullname + "\"; yearOfBirth=" +
-                   + this.YearOfBirth + "; yearOfDeath" + this.YearOfDeath;
+            return "fullname=\"" + this.Fullname + "\"; yearOfBirth=\"" +
+                   +this.YearOfBirth + "\"; yearOfDeath=\"" + this.YearOfDeath + "\";";
         }
     }
 }

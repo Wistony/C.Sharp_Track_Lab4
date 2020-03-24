@@ -1,15 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Lab4
 {
+    
+
     public static class Program
     {
         private static void Main(string[] args)
         {
-            var ukraineLibrary = new Library();
-            ukraineLibrary.AddBook(new Book
+            var ukraineLibrary = new List<Book>
+            {
+                new Book
                 {
-                    Title = "Ukraina v ogni",  
+                    Title = "Ukraina v ogni",
                     Author = new Author
                     {
                         Fullname = "Oleksandr Dovzhenko",
@@ -22,7 +27,7 @@ namespace Lab4
                 },
                 new Book
                 {
-                    Title = "Zacharovana Desna",  
+                    Title = "Zacharovana Desna",
                     Author = new Author
                     {
                         Fullname = "Oleksandr Dovzhenko",
@@ -35,7 +40,7 @@ namespace Lab4
                 },
                 new Book
                 {
-                    Title = "Chorna Rada",  
+                    Title = "Chorna Rada",
                     Author = new Author
                     {
                         Fullname = "Panteleimon Kulish",
@@ -46,9 +51,16 @@ namespace Lab4
                     YearOfPublishing = 2015,
                     Value = 200
                 }
-            );
-            
-            
+            };
+
+
+            var query =
+                ukraineLibrary.Select(n => n.GetHashCode());
+
+            foreach (var i in query)
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }
