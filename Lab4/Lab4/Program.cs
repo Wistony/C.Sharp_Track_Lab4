@@ -45,11 +45,10 @@ namespace Lab4
                     PublishingHouse = "Kristal Book",
                     YearOfPublishing = 2015,
                     Value = 200
-                },
-                
-                
-                
-                );
+                }
+            );
+            
+            
         }
     }
 }
