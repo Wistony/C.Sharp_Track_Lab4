@@ -1,1 +1,4 @@
-# C.Sharp_Track_Lab4
+## .Net
+## Lab #4 - LINQ
+### FullName: Androshchuk Maksym
+### Group: IP-81
