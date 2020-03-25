@@ -21,8 +21,8 @@ namespace Lab4
 
         public override string ToString()
         {
-            return "fullname=\"" + this.Fullname + "\"; yearOfBirth=\"" +
-                   +this.YearOfBirth + "\"; yearOfDeath=\"" + this.YearOfDeath + "\";";
+            return "fullname = " + this.Fullname + "; yearOfBirth = " +
+                   +this.YearOfBirth + "; yearOfDeath = " + this.YearOfDeath + ";";
         }
     }
 }
