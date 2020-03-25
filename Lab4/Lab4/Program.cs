@@ -67,13 +67,13 @@ namespace Lab4
 
             Console.WriteLine("4. The cheapest book \n");
             var query4 = library
-                    .OrderBy(n => n.Value)
-                    .ThenBy(n => n.Title)
-                    .Take(1)
-                ;
+                .OrderBy(n => n.Value)
+                .ThenBy(n => n.Title)
+                .Take(1)
+                .Select(n => (n.Author, n.Title, n.Value));
 
             foreach (var x in query4)
-                Console.WriteLine($"{x}");
+                Console.WriteLine($"{x.ToString()}");
             Console.WriteLine(delimiter);
             
 //------------------------------------------------------------------------------------------------------------------            
