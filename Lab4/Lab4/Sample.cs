@@ -1,12 +1,14 @@
+using System.Collections.Generic;
+
 namespace Lab4
 {
     using System.Collections.Generic;
 
     public static  class Sample
     {
-        public static List<Book> CreateListOfBook()
+        public static List<Book> Create_KPI_Library()
         {
-            var ukraineLibrary = new List<Book>
+            var kpiLibrary = new List<Book>
             {
                 new Book
                 {
@@ -57,9 +59,56 @@ namespace Lab4
                     Value = 75
                 }
             };
-            return ukraineLibrary;
+            return kpiLibrary;
         }
 
+        public static List<Book> Create_Kyiv_Library()
+        {
+            var kyivLibrary = new List<Book>
+            {
+                new Book
+                {
+                    Title = "Ukraina v ogni",
+                    Author = "Oleksandr Dovzhenko",
+                    PublishingHouse = "Folio",
+                    YearOfPublishing = 2010,
+                    Value = 150
+                },
+                new Book
+                {
+                    Title = "Zacharovana Desna",
+                    Author = "Oleksandr Dovzhenko",
+                    PublishingHouse = "Folio",
+                    YearOfPublishing = 2011,
+                    Value = 150
+                },
+                new Book
+                {
+                    Title = "1984",
+                    Author = "George Orwell",
+                    PublishingHouse = "Ababagalamaga",
+                    YearOfPublishing = 2001,
+                    Value = 350
+                },
+                new Book
+                {
+                    Title = "Hamlet",
+                    Author = "William Shakespeare",
+                    PublishingHouse = "Simon & Schuster",
+                    YearOfPublishing = 199,
+                    Value = 400
+                },
+                new Book
+                {
+                    Title = "Master i Margarita",
+                    Author = "Mykhaylo Bulgakov",
+                    PublishingHouse = "Azbuka",
+                    YearOfPublishing = 2013,
+                    Value = 130
+                },
+            };
+            return kyivLibrary;
+        }
         public static List<Author> CreateListOfAuthors()
         {
             var authorList = new List<Author>
@@ -93,6 +142,24 @@ namespace Lab4
                     Fullname = "Lina Kostenko",
                     YearOfBirth = 1930,
                     YearOfDeath = null
+                },
+                new Author
+                {
+                    Fullname = "William Shakespeare",
+                    YearOfBirth = 1564,
+                    YearOfDeath = 1616
+                },
+                new Author
+                {
+                    Fullname = "George Orwell",
+                    YearOfBirth = 1903,
+                    YearOfDeath = 1950
+                },
+                new Author
+                {
+                    Fullname = "Mykhaylo Bulgakov",
+                    YearOfBirth = 1891,
+                    YearOfDeath = 1940
                 }
             };
             return authorList;
