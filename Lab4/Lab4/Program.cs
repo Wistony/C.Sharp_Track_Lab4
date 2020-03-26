@@ -165,7 +165,7 @@ namespace Lab4
             
 //------------------------------------------------------------------------------------------------------------------            
             
-            Console.WriteLine(" 11. Total price of books");
+            Console.WriteLine(" 11. Total price of books\n");
             var query11 =
                 (from x in kyivLibrary
                     select x.Value).Sum(); //.Aggregate((x, y) => x + y);
@@ -175,7 +175,66 @@ namespace Lab4
             
 //------------------------------------------------------------------------------------------------------------------            
 
-            Console.WriteLine(" 12. ");
+            Console.WriteLine(" 12. Intersection of two library\n");
+            var query12 = kyivLibrary
+                .Intersect(kpiLibrary, new EqualityComparer())
+                .OrderBy(n => n.Value);
+            
+            foreach (var x in query12)
+                Console.WriteLine($"{x}");
+            Console.WriteLine(delimiter);
+            
+//------------------------------------------------------------------------------------------------------------------            
+
+            Console.WriteLine(" 13. Difference between the two libraries\n");
+            var query13 = kpiLibrary
+                .Except(kyivLibrary,new EqualityComparer());
+            
+            foreach (var x in query13)
+                Console.WriteLine($"{x}");
+            Console.WriteLine(delimiter);
+            
+            
+//------------------------------------------------------------------------------------------------------------------            
+
+            Console.WriteLine(" 14. Publishing house where all books have value more than 150\n");
+            var query14 =
+                from b in kpiLibrary
+                group b by b.PublishingHouse into g
+                where g.All(n => n.Value > 150)
+                select new
+                {
+                    Publication = g.Key,
+                    Books = 
+                        from p in g 
+                        select new
+                        {
+                            p.Title,
+                            p.Value
+                        }
+                };
+            
+            foreach (var x in query14)
+            {
+                Console.WriteLine($"{x.Publication}");
+                foreach (var b in x.Books)
+                {
+                    Console.WriteLine($"\t{b}");
+                }
+            }
+            Console.WriteLine(delimiter);
+            
+//------------------------------------------------------------------------------------------------------------------            
+            
+            Console.WriteLine(" 15. Misses while the price is less than 350\n");
+            var query15 =
+                (from x in kyivLibrary
+                    select x)
+                .SkipWhile(n => n.Value < 350);
+            
+            foreach (var x in query15)
+                Console.WriteLine($"{x}");
+            Console.WriteLine(delimiter);
         }
     }
 }
